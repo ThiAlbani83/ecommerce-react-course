@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
 import Navbar from "./components/header/Navbar";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
@@ -15,7 +20,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <BrowserRouter>
       <main>
         <Navbar itemCount={itemCount} />
         <Routes>
@@ -29,12 +34,12 @@ function App() {
               <ProductDetail onItemCountChange={handleItemCountChange} />
             }
           />
-          <Route path={`/hamburguers`} element={<Hamburguers />} />
-          <Route path={`/porcoes`} element={<Serving />} />
+          <Route path={"/hamburguers"} element={<Hamburguers />} />
+          <Route path={"/porcoes"} element={<Serving />} />
           <Route path={"/bebidas"} element={<Drinks />} />
         </Routes>
       </main>
-    </Router>
+    </BrowserRouter>
   );
 }
 
