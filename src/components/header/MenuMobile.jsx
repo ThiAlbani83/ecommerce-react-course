@@ -33,7 +33,7 @@ const MenuMobile = () => {
               Produtos
             </li>
             <li className="duration-200 cursor-pointer select-none active:scale-95">
-              Assinaturas
+              Assinatura
             </li>
             <li className="duration-200 cursor-pointer select-none active:scale-95">
               Sobre Nós
