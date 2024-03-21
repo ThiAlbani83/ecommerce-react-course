@@ -27,16 +27,16 @@ const MenuMobile = () => {
         <ul className="flex flex-col items-center justify-between h-full py-32 text-base font-medium text-primary gap-14 font-roboto">
           <div className="flex flex-col gap-10">
             <li className="duration-200 cursor-pointer select-none active:scale-95">
-              <NavLink to={"/"}> Início </NavLink>
+              <NavLink to={"/"}>Início</NavLink>
             </li>
             <li className="duration-200 cursor-pointer select-none active:scale-95">
-              Hamburgers
+              <NavLink to={"/hamburguers"}>Hamburgers </NavLink>
             </li>
             <li className="duration-200 cursor-pointer select-none active:scale-95">
-              Porções
+              <NavLink to={"/porcoes"}>Porções</NavLink>
             </li>
             <li className="duration-200 cursor-pointer select-none active:scale-95">
-              Bebidas
+              <NavLink to={"/bebidas"}>Bebidas</NavLink>
             </li>
             {/*  <li className="duration-200 cursor-pointer select-none active:scale-95">
               Contato

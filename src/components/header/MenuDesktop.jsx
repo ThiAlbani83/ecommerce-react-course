@@ -9,13 +9,13 @@ const MenuDesktop = () => {
           <NavLink to={"/"}>Início</NavLink>
         </li>
         <li className="duration-200 cursor-pointer select-none active:scale-95">
-          Hamburgers
+          <NavLink to={"/hamburguers"}>Hamburgers</NavLink>
         </li>
         <li className="duration-200 cursor-pointer select-none active:scale-95">
-          Porções
+          <NavLink to={"/porcoes"}>Porções</NavLink>
         </li>
         <li className="duration-200 cursor-pointer select-none active:scale-95">
-          Bebidas
+          <NavLink to={"/bebidas"}>Bebidas</NavLink>
         </li>
       </ul>
     </div>
