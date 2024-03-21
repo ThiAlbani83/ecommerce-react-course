@@ -35,7 +35,7 @@ const ItemList = ({ onItemCountChange, onProductIdChange }) => {
       {!loading && !error && (
         <>
           <h1 className="text-2xl font-bungee">Escolha seu Hamburger</h1>
-          <div className="flex flex-wrap items-center justify-center h-screen w-full gap-20 mx-auto xl:justify-start">
+          <div className="flex flex-wrap  justify-center w-full gap-20 mx-auto xl:justify-start">
             {product.map((product, index) => (
               <div key={index}>
                 <ItemCard
