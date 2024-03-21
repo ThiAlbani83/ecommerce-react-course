@@ -30,15 +30,15 @@ const MenuMobile = () => {
               <NavLink to={"/"}> Início </NavLink>
             </li>
             <li className="duration-200 cursor-pointer select-none active:scale-95">
-              Hamburgers
+              <NavLink to={"/category/hamburgers"}>Hamburgers</NavLink>
             </li>
             <li className="duration-200 cursor-pointer select-none active:scale-95">
-              Porções
+              <NavLink to={"/category/Porções"}>Porções</NavLink>
             </li>
             <li className="duration-200 cursor-pointer select-none active:scale-95">
-              Bebidas
+              <NavLink to={"/category/Bebidas"}>Bebidas</NavLink>
             </li>
-           {/*  <li className="duration-200 cursor-pointer select-none active:scale-95">
+            {/*  <li className="duration-200 cursor-pointer select-none active:scale-95">
               Contato
             </li> */}
           </div>

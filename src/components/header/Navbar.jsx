@@ -14,7 +14,14 @@ const Navbar = ({ itemCount }) => {
       <div className="flex items-center justify-between w-full px-8 py-8 sm:px-8 md:px-18 lg:px-32">
         <NavLink
           to={"/"}
-          className="z-50 flex items-center gap-3 cursor-pointer select-none"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "active"
+              : "z-50 flex items-center gap-3 cursor-pointer select-none"
+          }
+          activeClassName="text-blue-500"
         >
           <img src={logo} alt="logo" className="w-10" />
           <span className="text-lg font-bold font-bungee lg:text-xl xl:text-3xl">
