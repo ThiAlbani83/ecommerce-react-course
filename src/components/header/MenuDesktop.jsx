@@ -16,6 +16,7 @@ const MenuDesktop = () => {
         </li>
         <li className="duration-200 cursor-pointer select-none active:scale-95">
           <NavLink to={"/category/Bebidas"}>Bebidas</NavLink>
+        </li>
       </ul>
     </div>
   );

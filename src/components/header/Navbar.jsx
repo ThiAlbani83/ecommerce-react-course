@@ -21,7 +21,6 @@ const Navbar = ({ itemCount }) => {
               ? "active"
               : "z-50 flex items-center gap-3 cursor-pointer select-none"
           }
-          activeClassName="text-blue-500"
         >
           <img src={logo} alt="logo" className="w-10" />
           <span className="text-lg font-bold font-bungee lg:text-xl xl:text-3xl">

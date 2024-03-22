@@ -14,7 +14,6 @@ const ItemList = ({ onItemCountChange, onProductIdChange, isHome }) => {
       setTimeout(() => {
         fetchData();
         setLoading(false);
-        console.log(product);
       }, 2000);
     } catch (error) {
       setError("Erro na busca por produtos");
