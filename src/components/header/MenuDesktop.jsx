@@ -9,14 +9,13 @@ const MenuDesktop = () => {
           <NavLink to={"/"}>Início</NavLink>
         </li>
         <li className="duration-200 cursor-pointer select-none active:scale-95">
-          <NavLink to={"/hamburguers"}>Hamburgers</NavLink>
+          <NavLink to={"/category/hamburgers"}>Hamburgers</NavLink>
         </li>
         <li className="duration-200 cursor-pointer select-none active:scale-95">
-          <NavLink to={"/porcoes"}>Porções</NavLink>
+          <NavLink to={"/category/Porções"}>Porções</NavLink>
         </li>
         <li className="duration-200 cursor-pointer select-none active:scale-95">
-          <NavLink to={"/bebidas"}>Bebidas</NavLink>
-        </li>
+          <NavLink to={"/category/Bebidas"}>Bebidas</NavLink>
       </ul>
     </div>
   );

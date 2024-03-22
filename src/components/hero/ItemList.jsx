@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Loader from "../Loader";
 
-const ItemList = ({ onItemCountChange, onProductIdChange }) => {
+const ItemList = ({ onItemCountChange, onProductIdChange, isHome }) => {
+  const { id } = isHome ? "Hamburguers" : useParams();
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
   const [error, setError] = useState(null);
@@ -13,16 +14,25 @@ const ItemList = ({ onItemCountChange, onProductIdChange }) => {
       setTimeout(() => {
         fetchData();
         setLoading(false);
+        console.log(product);
       }, 2000);
     } catch (error) {
       setError("Erro na busca por produtos");
       setLoading(false);
     }
-  }, []);
+  }, [id]);
 
   const fetchData = async () => {
+    if (isHome) {
+      const response = await fetch(
+        "https://api.npoint.io/4104add4daf5e621ecf7/hamburgers"
+      );
+      const jsonData = await response.json();
+      setProduct(jsonData);
+      return;
+    }
     const response = await fetch(
-      "https://api.npoint.io/d121204674c66342f91b/hamburgers"
+      `https://api.npoint.io/4104add4daf5e621ecf7/${id}`
     );
     const jsonData = await response.json();
     setProduct(jsonData);

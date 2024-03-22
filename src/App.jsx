@@ -8,9 +8,7 @@ import {
 import Navbar from "./components/header/Navbar";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
-import Hamburguers from "./pages/Hamburguers";
-import Serving from "./pages/Serving";
-import Drinks from "./pages/Drinks";
+import ItemList from "./components/hero/ItemList";
 
 function App() {
   const [itemCount, setItemCount] = useState(0);
@@ -34,9 +32,10 @@ function App() {
               <ProductDetail onItemCountChange={handleItemCountChange} />
             }
           />
-          <Route path={"/hamburguers"} element={<Hamburguers />} />
-          <Route path={"/porcoes"} element={<Serving />} />
-          <Route path={"/bebidas"} element={<Drinks />} />
+          <Route
+            path={`/category/:id`}
+            element={<ItemList onItemCountChange={handleItemCountChange} />}
+          />
         </Routes>
       </main>
     </BrowserRouter>
