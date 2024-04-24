@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import Button from "../components/Button";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import Loader from "../components/Loader";
+import { useCart } from "../context/CartContext";
 
 function ProductDetail({ onItemCountChange }) {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [ingredientes, setIngredientes] = useState([]);
+  const { addToCart } = useCart();
 
   const [itemCount, setItemCount] = useState(1);
 
@@ -26,6 +28,7 @@ function ProductDetail({ onItemCountChange }) {
   };
 
   const handleAddToCart = () => {
+    addToCart(product, itemCount);
     onItemCountChange(itemCount);
     if (itemCount == 0) {
       alert("Nenhum produto selecionado");

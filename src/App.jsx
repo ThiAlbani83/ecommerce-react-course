@@ -11,6 +11,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Hamburguers from "./pages/Hamburguers";
 import Serving from "./pages/Serving";
 import Drinks from "./pages/Drinks";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   const [itemCount, setItemCount] = useState(0);
@@ -21,24 +22,26 @@ function App() {
 
   return (
     <BrowserRouter>
-      <main>
-        <Navbar itemCount={itemCount} />
-        <Routes>
-          <Route
-            path="/"
-            element={<Home onItemCountChange={handleItemCountChange} />}
-          />
-          <Route
-            path={`/product-detail/:id`}
-            element={
-              <ProductDetail onItemCountChange={handleItemCountChange} />
-            }
-          />
-          <Route path={"/hamburguers"} element={<Hamburguers />} />
-          <Route path={"/porcoes"} element={<Serving />} />
-          <Route path={"/bebidas"} element={<Drinks />} />
-        </Routes>
-      </main>
+      <CartProvider>
+        <main>
+          <Navbar itemCount={itemCount} />
+          <Routes>
+            <Route
+              path="/"
+              element={<Home onItemCountChange={handleItemCountChange} />}
+            />
+            <Route
+              path={`/product-detail/:id`}
+              element={
+                <ProductDetail onItemCountChange={handleItemCountChange} />
+              }
+            />
+            <Route path={"/hamburguers"} element={<Hamburguers />} />
+            <Route path={"/porcoes"} element={<Serving />} />
+            <Route path={"/bebidas"} element={<Drinks />} />
+          </Routes>
+        </main>
+      </CartProvider>
     </BrowserRouter>
   );
 }
